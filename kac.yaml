@@ -1,0 +1,17 @@
+---
+---
+apiVersion: kubearchive.kubearchive.org/v1alpha1
+kind: KubeArchiveConfig
+metadata:
+  name: kubearchive
+  namespace: kubeflow
+spec:
+  resources:
+    - selector:
+        apiVersion: v1
+        kind: Pod
+      archiveWhen: "true"
+    - selector:
+        apiVersion: argoproj.io/v1alpha1
+        kind: Workflow
+      archiveWhen: "true"
